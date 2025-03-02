@@ -19,7 +19,7 @@ import AuthContext from '@/context/AuthProvider';
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from '@/api/axios';
 import { Helmet } from 'react-helmet-async';
-import { APP_NAME } from '@/config';
+const APP_NAME = import.meta.env.VITE_APP_NAME;
 
 export default function OTPInput() {
 	const { auth } = useContext(AuthContext);

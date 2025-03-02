@@ -1,6 +1,6 @@
 import { createContext, useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { axiosPrivate } from '@/api/axios';
+import axios from '@/api/axios';
 
 const AuthContext = createContext({});
 
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
 	const logout = async () => {
 		try {
-			await axiosPrivate.delete('/auth/logout');
+			await axios.delete('/auth/logout');
 			if (isMounted.current) setAuth({ user: null, token: null });
 		} catch (err) {
 			console.error('Logout failed', err);

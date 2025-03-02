@@ -1,8 +1,6 @@
 import { LoginForm } from '@/components/login-form';
-import { APP_NAME } from '@/config';
 import { Helmet } from 'react-helmet-async';
-// import useRefreshToken from '@/hooks/useRefreshToken';
-// import Users from '@/components/Users';
+const APP_NAME = import.meta.env.VITE_APP_NAME;
 
 export default function Page() {
 	// const refresh = useRefreshToken();

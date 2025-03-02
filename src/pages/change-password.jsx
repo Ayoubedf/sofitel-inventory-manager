@@ -15,38 +15,7 @@ import { useContext, useRef, useState } from 'react';
 import axios from '@/api/axios';
 import AuthContext from '@/context/AuthProvider';
 import { Helmet } from 'react-helmet-async';
-import { APP_NAME } from '@/config';
-
-// const InputField = ({
-// 	id,
-// 	label,
-// 	type,
-// 	placeholder,
-// 	autoComplete,
-// 	error,
-// 	ref,
-// }) => (
-// 	<div className='grid gap-2'>
-// 		<Label htmlFor={id}>{label}</Label>
-// 		<Input
-// 			ref={ref}
-// 			id={id}
-// 			type={type}
-// 			placeholder={placeholder}
-// 			autoComplete={autoComplete}
-// 			aria-describedby={error ? `${id}-error` : undefined}
-// 			required
-// 		/>
-// 		{error && (
-// 			<p
-// 				id={`${id}-error`}
-// 				aria-live='assertive'
-// 				className='text-red-500 text-xs mt-1'>
-// 				{error}
-// 			</p>
-// 		)}
-// 	</div>
-// );
+const APP_NAME = import.meta.env.VITE_APP_NAME;
 
 export function PasswordChange({ className, ...props }) {
 	const { auth } = useContext(AuthContext);
@@ -127,7 +96,7 @@ export function PasswordChange({ className, ...props }) {
 										type='password'
 										placeholder='secret1234@'
 										autoComplete='new-password'
-										aria-describedby={validationErrors?.password && 'new-password-error'}
+										aria-describedby={validationErrors?.password ? 'new-password-error' : ''}
 										required
 									/>
 									{validationErrors?.password && (
@@ -148,7 +117,7 @@ export function PasswordChange({ className, ...props }) {
 										placeholder='secret1234@'
 										autoComplete='confirm-password'
 										aria-describedby={
-											validationErrors?.confirm_password && 'confirm-password-error'
+											validationErrors?.confirm_password ? 'confirm-password-error' : ''
 										}
 										required
 									/>

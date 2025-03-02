@@ -5,7 +5,7 @@ import Table from '../components/table';
 import useAxiosPrivate from '@/hooks/useAxiosPrivate';
 import Spinner from '@/components/ui/spinner';
 import { Helmet } from 'react-helmet-async';
-import { APP_NAME } from '@/config';
+const APP_NAME = import.meta.env.VITE_APP_NAME;
 
 const Category = () => {
 	const { cat: category } = useParams();

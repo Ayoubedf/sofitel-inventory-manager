@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Card from '../components/card';
-import { APP_NAME } from '@/config';
+const APP_NAME = import.meta.env.VITE_APP_NAME;
 
 const DashBoard = () => {
 	const cards = [

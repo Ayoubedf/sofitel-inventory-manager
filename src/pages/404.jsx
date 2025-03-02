@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { APP_NAME } from '@/config';
 import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
+const APP_NAME = import.meta.env.VITE_APP_NAME;
 
 export default function Default() {
 	const navigate = useNavigate();
